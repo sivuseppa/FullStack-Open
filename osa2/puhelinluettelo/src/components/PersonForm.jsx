@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+import Button from './Button';
+
 const PersonForm = ({ newName, newNumber, onSubmit, onChange, setters }) => {
   return (
     <form>
@@ -8,9 +10,7 @@ const PersonForm = ({ newName, newNumber, onSubmit, onChange, setters }) => {
         Number: <input value={newNumber} onChange={onChange(setters.setNewNumber)} />
       </div>
       <div>
-        <button type='submit' onClick={onSubmit}>
-          add
-        </button>
+        <Button type='submit' onClick={onSubmit} text='Add' />
       </div>
     </form>
   );

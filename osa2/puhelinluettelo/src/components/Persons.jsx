@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
-const Persons = ({ persons, filterWith }) => {
+import Person from './Person';
+
+const Persons = ({ persons, filterWith, handleRemove }) => {
   return (
     <div>
       {persons
         .filter((person) => person.name.toLowerCase().includes(filterWith.toLowerCase()))
         .map((person) => (
-          <p key={person.name}>
-            {person.name} {person.number}
-          </p>
+          <Person key={person.id} person={person} handleRemove={handleRemove} />
         ))}
     </div>
   );
